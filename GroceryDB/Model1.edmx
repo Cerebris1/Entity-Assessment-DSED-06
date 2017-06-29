@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProductLocationsActualModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BeerBarcodes">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="float" />
+        </EntityType>
+        <EntityType Name="BeerData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Article Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Storage Bin" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoH" Type="float" />
+          <Property Name="UoM" Type="nvarchar" MaxLength="255" />
+          <Property Name="ABC" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoS" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoS Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ProductsWithBarcodes">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Product Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="float" />
+        </EntityType>
+        <EntityType Name="ProductsWithData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Article Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Storage Bin" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub Department" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProductLocationsActual.dbo.AllDeptsAllProductsAllData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllDeptsAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Article Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="float" />
+          <Property Name="Storage Bin" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub Department" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProductLocationsActual.dbo.BeerAllProductsAllData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BeerAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Article Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="float" />
+          <Property Name="Storage Bin" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub Department" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProductLocationsActual.dbo.GroceryAllProductsAllData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GroceryAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="float" Nullable="false" />
+          <Property Name="Article Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Barcode" Type="float" />
+          <Property Name="Storage Bin" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub Department" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="ProductLocationsActualModelStoreContainer">
+          <EntitySet Name="BeerBarcodes" EntityType="Self.BeerBarcodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeerData" EntityType="Self.BeerData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductsWithBarcodes" EntityType="Self.ProductsWithBarcodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductsWithData" EntityType="Self.ProductsWithData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllDeptsAllProductsAllData" EntityType="Self.AllDeptsAllProductsAllData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllDeptsAllProductsAllData].[Article] AS [Article], 
+    [AllDeptsAllProductsAllData].[Article Description] AS [Article Description], 
+    [AllDeptsAllProductsAllData].[Barcode] AS [Barcode], 
+    [AllDeptsAllProductsAllData].[Storage Bin] AS [Storage Bin], 
+    [AllDeptsAllProductsAllData].[Department] AS [Department], 
+    [AllDeptsAllProductsAllData].[Sub Department] AS [Sub Department]
+    FROM [dbo].[AllDeptsAllProductsAllData] AS [AllDeptsAllProductsAllData]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BeerAllProductsAllData" EntityType="Self.BeerAllProductsAllData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BeerAllProductsAllData].[Article] AS [Article], 
+    [BeerAllProductsAllData].[Article Description] AS [Article Description], 
+    [BeerAllProductsAllData].[Barcode] AS [Barcode], 
+    [BeerAllProductsAllData].[Storage Bin] AS [Storage Bin], 
+    [BeerAllProductsAllData].[Department] AS [Department], 
+    [BeerAllProductsAllData].[Sub Department] AS [Sub Department]
+    FROM [dbo].[BeerAllProductsAllData] AS [BeerAllProductsAllData]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GroceryAllProductsAllData" EntityType="Self.GroceryAllProductsAllData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GroceryAllProductsAllData].[Article] AS [Article], 
+    [GroceryAllProductsAllData].[Article Description] AS [Article Description], 
+    [GroceryAllProductsAllData].[Barcode] AS [Barcode], 
+    [GroceryAllProductsAllData].[Storage Bin] AS [Storage Bin], 
+    [GroceryAllProductsAllData].[Department] AS [Department], 
+    [GroceryAllProductsAllData].[Sub Department] AS [Sub Department]
+    FROM [dbo].[GroceryAllProductsAllData] AS [GroceryAllProductsAllData]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductLocationsActualModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BeerBarcode">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="Double" />
+        </EntityType>
+        <EntityType Name="BeerData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Article_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Storage_Bin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SoH" Type="Double" />
+          <Property Name="UoM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ABC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SoS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SoS_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductsWithBarcode">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Product_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="Double" />
+        </EntityType>
+        <EntityType Name="ProductsWithData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Article_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Storage_Bin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AllDeptsAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Article_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="Double" />
+          <Property Name="Storage_Bin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BeerAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Article_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="Double" />
+          <Property Name="Storage_Bin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GroceryAllProductsAllData">
+          <Key>
+            <PropertyRef Name="Article" />
+          </Key>
+          <Property Name="Article" Type="Double" Nullable="false" />
+          <Property Name="Article_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="Double" />
+          <Property Name="Storage_Bin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ProductLocationsActualEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BeerBarcodes" EntityType="Self.BeerBarcode" />
+          <EntitySet Name="BeerDatas" EntityType="Self.BeerData" />
+          <EntitySet Name="ProductsWithBarcodes" EntityType="Self.ProductsWithBarcode" />
+          <EntitySet Name="ProductsWithDatas" EntityType="Self.ProductsWithData" />
+          <EntitySet Name="AllDeptsAllProductsAllDatas" EntityType="Self.AllDeptsAllProductsAllData" />
+          <EntitySet Name="BeerAllProductsAllDatas" EntityType="Self.BeerAllProductsAllData" />
+          <EntitySet Name="GroceryAllProductsAllDatas" EntityType="Self.GroceryAllProductsAllData" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProductLocationsActualModelStoreContainer" CdmEntityContainer="ProductLocationsActualEntities">
+          <EntitySetMapping Name="BeerBarcodes">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.BeerBarcode">
+              <MappingFragment StoreEntitySet="BeerBarcodes">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeerDatas">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.BeerData">
+              <MappingFragment StoreEntitySet="BeerData">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Sub_Department" ColumnName="Sub Department" />
+                <ScalarProperty Name="Article_Description" ColumnName="Article Description" />
+                <ScalarProperty Name="Storage_Bin" ColumnName="Storage Bin" />
+                <ScalarProperty Name="SoH" ColumnName="SoH" />
+                <ScalarProperty Name="UoM" ColumnName="UoM" />
+                <ScalarProperty Name="ABC" ColumnName="ABC" />
+                <ScalarProperty Name="SoS" ColumnName="SoS" />
+                <ScalarProperty Name="SoS_Name" ColumnName="SoS Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsWithBarcodes">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.ProductsWithBarcode">
+              <MappingFragment StoreEntitySet="ProductsWithBarcodes">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Product_Description" ColumnName="Product Description" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsWithDatas">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.ProductsWithData">
+              <MappingFragment StoreEntitySet="ProductsWithData">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Article_Description" ColumnName="Article Description" />
+                <ScalarProperty Name="Storage_Bin" ColumnName="Storage Bin" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Sub_Department" ColumnName="Sub Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllDeptsAllProductsAllDatas">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.AllDeptsAllProductsAllData">
+              <MappingFragment StoreEntitySet="AllDeptsAllProductsAllData">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Article_Description" ColumnName="Article Description" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Storage_Bin" ColumnName="Storage Bin" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Sub_Department" ColumnName="Sub Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeerAllProductsAllDatas">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.BeerAllProductsAllData">
+              <MappingFragment StoreEntitySet="BeerAllProductsAllData">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Article_Description" ColumnName="Article Description" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Storage_Bin" ColumnName="Storage Bin" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Sub_Department" ColumnName="Sub Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroceryAllProductsAllDatas">
+            <EntityTypeMapping TypeName="ProductLocationsActualModel.GroceryAllProductsAllData">
+              <MappingFragment StoreEntitySet="GroceryAllProductsAllData">
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="Article_Description" ColumnName="Article Description" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Storage_Bin" ColumnName="Storage Bin" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Sub_Department" ColumnName="Sub Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc1d4d7244f14e0e97ffbffcc6ec4291" Name="Diagram1">
+        <EntityTypeShape EntityType="GroceryTestDBModel.BeerBarcode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.BeerData" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.DairyBarcode" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.DairyData" Width="1.5" PointX="4.625" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.FrozenBarcode" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.FrozenData" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GMBarcode" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GMData" Width="1.5" PointX="6.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GroceryBarcode" Width="1.5" PointX="0.5" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GroceryData" Width="1.5" PointX="2.75" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.WineBarcode" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.WineData" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.BeerAllProductsAllData" Width="1.5" PointX="4.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.DairyAllProductsAllData" Width="1.5" PointX="0.625" PointY="3" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.FrozenAllProductsAllData" Width="1.5" PointX="9.375" PointY="3" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GMAllProductsAllData" Width="1.5" PointX="7.75" PointY="3" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.GroceryAllProductsAllData" Width="1.5" PointX="6.125" PointY="3" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.WineAllProductsAllData" Width="1.5" PointX="2.625" PointY="3" />
+        <EntityTypeShape EntityType="GroceryTestDBModel.AllDeptsAllProductsAllData" Width="1.5" PointX="0.625" PointY="5.375" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
